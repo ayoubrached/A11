@@ -9,7 +9,8 @@ html {
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 800px;
+    width: 98%;
+    max-width: 960px;
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -54,10 +55,11 @@ header img {
 }
 #nav_menu ul li {
 	float: left;
+	width: 20%;
 }
 #nav_menu ul li a {
     display: block;
-    width: 160px;
+    width: 100%;
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -72,12 +74,14 @@ header img {
     display: none;
     position: absolute;
     top: 100%;
+    width: 160px;
 }
 #nav_menu ul ul li {
-	float: none;
+    float: none;
+    width: 100%;
 }
 #nav_menu ul li:hover > ul {
-	display: block;
+    display: block;
 }
 #nav_menu > ul::after {
     content: "";
@@ -87,9 +91,9 @@ header img {
 
 /* the styles for the section */
 section {
-	width: 525px;
+	width: 65%;
 	float: right;
-	padding: 0 20px 20px 20px;
+	padding: 0 2% 20px 2%;
 }
 section h1 {
 	font-size: 150%;
@@ -133,13 +137,15 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	max-width: 40%;
+	min-width: 150px;
 }
 
 /* the styles for the aside */
 aside {
-	width: 215px;
+	width: 27%;
 	float: right;
-	padding: 0 0 20px 20px;
+	padding: 0 2% 20px 2%;
 }
 aside h2 {
 	color: #800000;
@@ -159,10 +165,154 @@ aside img {
 footer {
 	background-color: #931420;
 	clear: both;
-
 }
 footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+@media screen and (max-width: 768px) {
+    aside h2 a {
+        font-size: 85%;
+    }
+    section h1 {
+        font-size: 125%;
+    }
+    section h2, aside h2 {
+        font-size: 110%;
+    }
+    #nav_menu ul ul {
+        width: 160px;
+        left: auto;
+    }
+}
+
+.slicknav_menu {
+    display: none;
+}
+
+.slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: 0.438em 0.625em;
+    line-height: 1.125em;
+    cursor: pointer;
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: 4px;
+}
+
+.slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+    color: #fff;
+    font-weight: bold;
+}
+
+.slicknav_menu .slicknav_icon {
+    float: left;
+    margin: 0.188em 0 0 0.438em;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: 0.125em;
+    border-radius: 1px;
+    background-color: #fff;
+    margin-top: 0.125em;
+}
+
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em;
+}
+
+.slicknav_nav {
+    clear: both;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em;
+    background-color: #800000;
+}
+
+.slicknav_nav, .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.slicknav_nav ul {
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+.slicknav_nav a {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.slicknav_nav a:hover {
+    background: #ccc;
+    color: #222;
+    border-radius: 6px;
+}
+
+.slicknav_menu {
+    background: #800000;
+    padding: 5px;
+}
+
+@media screen and (max-width: 576px) {
+    header img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    header {
+        text-align: center;
+    }
+    section, aside {
+        float: none;
+        width: 96%;
+        padding: 0 2%;
+    }
+    article img {
+        max-width: 30%;
+        min-width: 120px;
+    }
+    aside div {
+        column-count: 2;
+    }
+    #nav_menu {
+        display: none;
+    }
+    .slicknav_menu {
+        display: block;
+    }
+    .slicknav_nav ul {
+        background-color: #800000;
+        margin-left: 10px !important;
+    }
+    .slicknav_nav .slicknav_row:hover {
+        background: #ccc;
+        color: #222;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 90%;
+    }
+    footer p {
+        padding: 0.5em;
+        line-height: 1.4;
+    }
 }
